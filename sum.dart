@@ -11,14 +11,3 @@ class Sum {
     return sum;
   }
 }
-
-void main() {
-  final sum = Sum();
-
-  try {
-    final sumResult = sum.div3Or5SmallerThanInput(input: 1);
-    print("The sum result is $sumResult");
-  } catch (e) {
-    print("ERROR : $e");
-  }
-}
