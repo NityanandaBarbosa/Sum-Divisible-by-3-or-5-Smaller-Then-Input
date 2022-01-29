@@ -1,16 +1,24 @@
 class Sum {
-  void div3Or5SmallerThanInput({required int input}) {
+  int div3Or5SmallerThanInput({required int input}) {
     int sum = 0;
-    for (int value = 1; value < input; value++) {
-      if (value % 3 == 0 || value % 5 == 0) {
-        sum += value;
+    if (input >= 1) {
+      for (int value = 1; value < input; value++) {
+        if (value % 3 == 0 || value % 5 == 0) sum += value;
       }
+    } else {
+      throw "invalid value";
     }
-    print("A somatoria é $sum");
+    return sum;
   }
 }
 
 void main() {
   final sum = Sum();
-  sum.div3Or5SmallerThanInput(input: 11);
+
+  try {
+    final sumResult = sum.div3Or5SmallerThanInput(input: 1);
+    print("The sum result is $sumResult");
+  } catch (e) {
+    print("ERROR : $e");
+  }
 }
